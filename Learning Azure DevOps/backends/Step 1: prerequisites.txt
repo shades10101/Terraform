@@ -1,0 +1,17 @@
+# First auth to Azure
+az login
+
+# Get subscription ID
+az account list --output table
+
+# Set subscription
+az account set --subscription <Azure-SubscriptionId>
+
+# Then create the service principal account using the following command:
+az ad sp create-for-rbac --role="Contributor" 
+--scopes="/subscriptions/SUBSCRIPTION_ID" --name="Azure-DevOps"
+
+# These values will be mapped to these Terraform variables:
+appId (Azure) → client_id (Terraform).
+password (Azure) → client_secret (Terraform).
+tenant (Azure) → tenant_id (Terraform).
