@@ -3,7 +3,7 @@ provider "aws" {
   region = "ca-central-1"
 }
 
-# Pin AWS Plugin version
+/*# Pin AWS Plugin version
 terraform {
   # Configure S3 bucker for state
   backend "s3" {
@@ -14,13 +14,13 @@ terraform {
     encrypt        = true
   }
 }
-
+*/
 # Configure S3 Bucket
 resource "aws_s3_bucket" "state_tf" {
   bucket = "tf-prod-state-bucket-031494"
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 
   server_side_encryption_configuration {

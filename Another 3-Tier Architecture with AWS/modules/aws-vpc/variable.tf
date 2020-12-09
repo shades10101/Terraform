@@ -1,0 +1,9 @@
+variable "vpc_cidr" {}
+variable "pub_cidr_1" {}
+variable "pub_cidr_2" {}
+variable "availability_zone_1" {}
+variable "availability_zone_2" {}
+variable "private_cidr_1" {}
+variable "private_cidr_2" {}
+variable "ssh_ip" {}
+variable "aws_region" {}
